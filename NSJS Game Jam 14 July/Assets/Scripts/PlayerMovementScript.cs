@@ -8,6 +8,9 @@ public class movementScript : MonoBehaviour
 {
     public bool isGrounded = true;
     public bool isFlying = false;
+    public bool on = false;
+    public int oreo = 1;
+    public bool flys = true;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody;
     private Vector2 movement;
@@ -29,22 +32,26 @@ public class movementScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (on == false)
+        {
+            return;
+        }
         rigidBody.velocity = new Vector2(movement.x * movespeed, rigidBody.velocity.y);
         if (isGrounded && movement.y >0)
         {
-            rigidBody.velocity += Vector2.up * jumpHeight;
+            rigidBody.velocity += Vector2.up * jumpHeight * oreo;
             isGrounded = false;
         }
 
-        else if (movement.y > 0f && isFlying == false && rigidBody.velocity.y <=0 )
+        else if (movement.y > 0f && isFlying == false && rigidBody.velocity.y <=0 && flys == true)
         {
-            rigidBody.gravityScale = wingStrength * 0.01f;
+            rigidBody.gravityScale = wingStrength * 0.01f * oreo;
             isFlying = true;
         }
 
         else if (movement.y < 0f)
         {
-            rigidBody.gravityScale = 1;
+            rigidBody.gravityScale = 1 * oreo;
             isFlying = false;
         }
 
@@ -71,7 +78,7 @@ public class movementScript : MonoBehaviour
         {
             isGrounded = true;
             isFlying = false;
-            rigidBody.gravityScale = 1;
+            rigidBody.gravityScale = 1 * oreo;
         }
     }
     public void OnMove(InputAction.CallbackContext context)
