@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - PlayerDevil
+  - Destructible
+  - Repairable
   layers:
   - Default
   - TransparentFX

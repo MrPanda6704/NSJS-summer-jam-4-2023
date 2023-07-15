@@ -6,13 +6,13 @@ using UnityEngine.InputSystem;
 
 public class movementScript : MonoBehaviour
 {
-    public bool isGrounded = true;
-    public bool isFlying = false;
+    private bool isGrounded = true;
+    private bool isFlying = false;
     public bool on = false;
     public int oreo = 1;
     public bool flys = true;
-    private SpriteRenderer spriteRenderer;
-    private Rigidbody2D rigidBody;
+    public SpriteRenderer spriteRenderer;
+    public Rigidbody2D rigidBody;
     private Vector2 movement;
     [SerializeField]
     private float jumpHeight = 8f;
@@ -20,6 +20,7 @@ public class movementScript : MonoBehaviour
     float movespeed = 5f;
     [SerializeField]
     float wingStrength = 50f;
+    public bool isFacingRight;
 
     // Start is called before the first frame update
     void Awake()
@@ -61,14 +62,20 @@ public class movementScript : MonoBehaviour
 
     private void Update()
     {
+        if(on == false)
+        {
+            return;
+        }
 
         if (movement.x > 0)
         {
             spriteRenderer.flipX = false;
+            isFacingRight = true;
         }
         else if (movement.x < 0)
         {
             spriteRenderer.flipX = true;
+            isFacingRight = false;
         }
     }
 

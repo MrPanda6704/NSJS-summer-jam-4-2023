@@ -10,7 +10,7 @@ public class switchScript : MonoBehaviour
     public movementScript devil;
     public GameObject d;
     public GameObject a;
-    public CinemachineVirtualCamera camera;
+    public CinemachineVirtualCamera cam;
     void Switch()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -28,12 +28,16 @@ public class switchScript : MonoBehaviour
         if (angel.on == true)
         {
             angel.on = false;
+            angel.rigidBody.velocity = Vector2.zero;
             devil.on = true;
-            camera.Follow = d.transform;
-        } else {
+            cam.Follow = d.transform;
+        }
+        else 
+        {
             angel.on = true;
             devil.on = false;
-            camera.Follow = a.transform;
+            devil.rigidBody.velocity = Vector2.zero;
+            cam.Follow = a.transform;
         }
     }
 }
