@@ -21,13 +21,16 @@ public class movementScript : MonoBehaviour
     [SerializeField]
     float wingStrength = 50f;
     public bool isFacingRight;
+    private Vector3 spawn;
+    public GameObject other_character;
+    public int killbox_distance;
 
     // Start is called before the first frame update
     void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        spawn = transform.position;
     }
 
     // Update is called once per frame
@@ -62,11 +65,16 @@ public class movementScript : MonoBehaviour
 
     private void Update()
     {
+        if (transform.position.y > killbox_distance || transform.position.y < -killbox_distance)
+        {
+            transform.position = spawn;
+            other_character.transform.position = other_character.GetComponent<movementScript>().spawn;
+        }
+
         if(on == false)
         {
             return;
         }
-
         if (movement.x > 0)
         {
             spriteRenderer.flipX = false;
@@ -81,12 +89,12 @@ public class movementScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.gameObject.name == "Ground")
-        {
+        //if (collider.gameObject.name == "Ground")
+        //{
             isGrounded = true;
             isFlying = false;
             rigidBody.gravityScale = 1 * oreo;
-        }
+        //}
     }
     public void OnMove(InputAction.CallbackContext context)
     {

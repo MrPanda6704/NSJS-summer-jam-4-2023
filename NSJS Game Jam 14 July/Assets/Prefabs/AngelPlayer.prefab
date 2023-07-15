@@ -239,6 +239,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 09889379-616b-45b9-9a0f-fd4860742205
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 483c923f-c0b7-4473-9522-7a9e501538ef
+    m_ActionName: Player/Switch[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: af7d38bf-9fc7-4a66-bacb-a58b5f15c423
+    m_ActionName: Player/Repair[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -256,8 +264,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cb15e282df3c3478f5f5812c0626d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGrounded: 1
-  isFlying: 0
-  jumpHeight: 7
+  on: 0
+  oreo: 1
+  flys: 1
+  spriteRenderer: {fileID: 0}
+  rigidBody: {fileID: 0}
+  jumpHeight: 10
   movespeed: 7
   wingStrength: 45
+  isFacingRight: 0
+  other_character: {fileID: 0}
+  killbox_distance: 0

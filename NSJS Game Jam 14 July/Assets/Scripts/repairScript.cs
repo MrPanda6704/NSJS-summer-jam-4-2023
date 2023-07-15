@@ -12,7 +12,7 @@ public class repairScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        repairables = GameObject.FindGameObjectsWithTag("Repairable");
+        repairables = GameObject.FindGameObjectsWithTag("destructible");
         min = Vector2.Distance(transform.position, repairables[0].transform.position);
         selectedObj = repairables[0];
         foreach (var item in repairables)
