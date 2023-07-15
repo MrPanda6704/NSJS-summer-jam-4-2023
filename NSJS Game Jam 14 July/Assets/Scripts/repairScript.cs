@@ -4,44 +4,43 @@ using UnityEngine;
 
 public class repairScript : MonoBehaviour
 {
+    public movementScript angelPlayerScript;
     [SerializeField] float range = 4f;
-    private GameObject[] repairables;
+    public GameObject[] repairables;
     private float min;
     private float itemDistance;
     private GameObject selectedObj;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        repairables = GameObject.FindGameObjectsWithTag("destructible");
-        min = Vector2.Distance(transform.position, repairables[0].transform.position);
         selectedObj = repairables[0];
-        foreach (var item in repairables)
-        {
-            item.SetActive(false);
-        }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (GameObject item in repairables)
+        min = float.MaxValue;
+        foreach (GameObject obj in repairables)
         {
-            itemDistance = Vector2.Distance(transform.position, item.transform.position);
-            if (min > itemDistance)
+            itemDistance = Vector2.Distance(transform.position, obj.transform.position);
+            if (itemDistance < min && obj.activeSelf == false)
             {
                 min = itemDistance;
-                selectedObj = item;
+                selectedObj = obj;
             }
         }
     }
 
     public void OnRepair()
     {
-        if (itemDistance < range)
+        if (angelPlayerScript.on)
         {
-            selectedObj.SetActive(true);
+            if (min <= range)
+            {
+                selectedObj.SetActive(true);
 
+            }
         }
+
     }
 }

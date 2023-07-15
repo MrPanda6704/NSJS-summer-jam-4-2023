@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class movementScript : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class movementScript : MonoBehaviour
     private Vector3 spawn;
     public GameObject other_character;
     public int killbox_distance;
+    public GameObject goal;
+    public float goal_range;
+    public string nextscene;
 
     // Start is called before the first frame update
     void Awake()
@@ -65,6 +69,17 @@ public class movementScript : MonoBehaviour
 
     private void Update()
     {
+        Vector3 target = goal.transform.position;
+        Vector3 diff = target - transform.position;
+        float distance = diff.magnitude;
+        Vector3 other = other_character.transform.position;
+        Vector3 diff2 = target - other;
+        float distance2 = diff2.magnitude;
+        if (distance < goal_range && distance2 < goal_range)
+        {
+            SceneManager.LoadScene(nextscene);
+        }
+
         if (transform.position.y > killbox_distance || transform.position.y < -killbox_distance)
         {
             transform.position = spawn;
