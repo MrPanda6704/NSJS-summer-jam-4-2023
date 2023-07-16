@@ -496,7 +496,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.34233716, g: 0.39283273, b: 0.46226418, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10415,7 +10415,7 @@ PrefabInstance:
       objectReference: {fileID: 742566952}
     - target: {fileID: 5746394551710357058, guid: 4f618b96049973449881dde7b5120896, type: 3}
       propertyPath: nextscene
-      value: Level 1
+      value: Endcard
       objectReference: {fileID: 0}
     - target: {fileID: 5746394551710357058, guid: 4f618b96049973449881dde7b5120896, type: 3}
       propertyPath: goal_range
@@ -10544,7 +10544,7 @@ PrefabInstance:
       objectReference: {fileID: 742566952}
     - target: {fileID: 8363601594734931383, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
       propertyPath: nextscene
-      value: Level 1
+      value: Endcard
       objectReference: {fileID: 0}
     - target: {fileID: 8363601594734931383, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
       propertyPath: goal_range
