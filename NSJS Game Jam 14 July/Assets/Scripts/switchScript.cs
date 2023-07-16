@@ -6,6 +6,9 @@ using Cinemachine;
 
 public class switchScript : MonoBehaviour
 {
+    public AudioSource angelMusic;
+    public AudioSource devilMusic;
+    public AudioSource switchSound;
     public movementScript angel;
     public movementScript devil;
     public GameObject d;
@@ -31,6 +34,8 @@ public class switchScript : MonoBehaviour
             angel.rigidBody.velocity = Vector2.zero;
             devil.on = true;
             cam.Follow = d.transform;
+            devilMusic.Play();
+            angelMusic.Stop();
         }
         else 
         {
@@ -38,6 +43,10 @@ public class switchScript : MonoBehaviour
             devil.on = false;
             devil.rigidBody.velocity = Vector2.zero;
             cam.Follow = a.transform;
+            devilMusic.Stop();
+            angelMusic.Play();
         }
+
+        switchSound.Play();
     }
 }

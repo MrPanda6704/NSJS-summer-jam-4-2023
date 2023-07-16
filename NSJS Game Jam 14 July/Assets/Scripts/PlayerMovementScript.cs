@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class movementScript : MonoBehaviour
 {
+    private SFXScript soundScript;
     private Animator animator;
     private bool isGrounded = true;
     private bool isFlying = false;
@@ -33,6 +34,7 @@ public class movementScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        soundScript = GetComponent<SFXScript>();
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -51,12 +53,14 @@ public class movementScript : MonoBehaviour
         {
             rigidBody.velocity += Vector2.up * jumpHeight * oreo;
             isGrounded = false;
+            soundScript.PlayerJump();
         }
 
         else if (movement.y > 0f && isFlying == false && rigidBody.velocity.y <=0 && flys == true)
         {
             rigidBody.gravityScale = wingStrength * 0.01f * oreo;
             isFlying = true;
+            soundScript.PlayerAngelGlide();
         }
 
         else if (movement.y < 0f)
@@ -85,6 +89,7 @@ public class movementScript : MonoBehaviour
 
         if (transform.position.y > killbox_distance || transform.position.y < -killbox_distance)
         {
+            soundScript.PlayerDrop();
             transform.position = spawn;
             rigidBody.velocity = Vector2.zero;
             other_character.transform.position = other_character.GetComponent<movementScript>().spawn;
@@ -109,6 +114,8 @@ public class movementScript : MonoBehaviour
         if (movement.x !=0)
         {
             animator.SetBool("isMoving", true);
+            soundScript.walk();
+           
         }
         else
         {
@@ -119,7 +126,12 @@ public class movementScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collider)
     {
         //if (collider.gameObject.name == "Ground")
-        //{
+        
+            if (flys)
+            {
+                soundScript.stopGlide();
+            }
+            soundScript.PlayerLand();
             isGrounded = true;
             isFlying = false;
             rigidBody.gravityScale = 1 * oreo;

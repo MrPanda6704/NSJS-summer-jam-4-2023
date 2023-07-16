@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class bulletMoveScript : MonoBehaviour
 {
+    private fireballSFX soundScript;
     private movementScript player;
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
@@ -16,6 +18,8 @@ public class bulletMoveScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        soundScript = GetComponent<fireballSFX>();
+        soundScript.playShoot();
         player = GameObject.FindGameObjectWithTag(tag).GetComponent<movementScript>();
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -34,11 +38,13 @@ public class bulletMoveScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collider)
     {
+        soundScript.playCollision();
         if (collider.gameObject.tag == "Destructible")
         {
             collider.gameObject.SetActive(false);
         }
         Destroy(gameObject);
+        
     }
 
 }
