@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -521,7 +522,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.966218
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -559,7 +560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
@@ -579,7 +580,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -618,6 +619,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37ab74a049b306c4888811f00a5fdabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39753b599952a54899abf4fb4853f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1587082880}
 --- !u!1001 &533424641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1822,7 +1836,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1866705450}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7.966218
+    OrthographicSize: 15
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -10533,7 +10547,7 @@ PrefabInstance:
     - target: {fileID: 8934554835922849630, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
       propertyPath: cam
       value: 
-      objectReference: {fileID: 1289188846}
+      objectReference: {fileID: 519420036}
     - target: {fileID: 8934554835922849630, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
       propertyPath: devil
       value: 

@@ -13,7 +13,7 @@ public class switchScript : MonoBehaviour
     public movementScript devil;
     public GameObject d;
     public GameObject a;
-    public CinemachineVirtualCamera cam;
+    public Camera cam;
     void Switch()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -33,7 +33,7 @@ public class switchScript : MonoBehaviour
             angel.on = false;
             angel.rigidBody.velocity = Vector2.zero;
             devil.on = true;
-            cam.Follow = d.transform;
+            cam.target = d;
             devilMusic.Play();
             angelMusic.Stop();
         }
@@ -42,7 +42,7 @@ public class switchScript : MonoBehaviour
             angel.on = true;
             devil.on = false;
             devil.rigidBody.velocity = Vector2.zero;
-            cam.Follow = a.transform;
+            cam.target = a;
             devilMusic.Stop();
             angelMusic.Play();
         }
