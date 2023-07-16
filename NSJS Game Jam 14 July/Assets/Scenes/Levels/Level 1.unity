@@ -8616,42 +8616,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3302067414108227872, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
   m_PrefabInstance: {fileID: 5020411520313866116}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1866705457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587082880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f10dbbd1218d0f24895241da7ab4feb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angelPlayerScript: {fileID: 0}
-  range: 10
-  repairables: []
---- !u!95 &1866705458
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587082880}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8494b3757da746546ad6025077a8f0cb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1962982990 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4710214143156690943, guid: cad7341a1eefa1a4b984166426c26004, type: 3}
@@ -8707,25 +8671,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 445098286}
     - target: {fileID: 5746394551710357058, guid: 4f618b96049973449881dde7b5120896, type: 3}
-      propertyPath: nextscene
-      value: Fortress
-      objectReference: {fileID: 0}
-    - target: {fileID: 5746394551710357058, guid: 4f618b96049973449881dde7b5120896, type: 3}
-      propertyPath: goal_range
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5746394551710357058, guid: 4f618b96049973449881dde7b5120896, type: 3}
-      propertyPath: jumpHeight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5746394551710357058, guid: 4f618b96049973449881dde7b5120896, type: 3}
       propertyPath: other_character
       value: 
       objectReference: {fileID: 1587082880}
-    - target: {fileID: 5746394551710357058, guid: 4f618b96049973449881dde7b5120896, type: 3}
-      propertyPath: killbox_distance
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 6916180502439749743, guid: 4f618b96049973449881dde7b5120896, type: 3}
       propertyPath: m_Name
       value: PlayerDevil
@@ -8740,7 +8688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7788736784849747552, guid: 4f618b96049973449881dde7b5120896, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.3
+      value: -5.49
       objectReference: {fileID: 0}
     - target: {fileID: 7788736784849747552, guid: 4f618b96049973449881dde7b5120896, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8836,72 +8784,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 445098286}
     - target: {fileID: 8363601594734931383, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: nextscene
-      value: Fortress
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363601594734931383, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: goal_range
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363601594734931383, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: jumpHeight
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363601594734931383, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: wingStrength
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363601594734931383, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
       propertyPath: other_character
       value: 
       objectReference: {fileID: 112297763}
-    - target: {fileID: 8363601594734931383, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: killbox_distance
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 8696293623659930143, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
       propertyPath: m_Name
       value: PlayerAngel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
-      value: af7d38bf-9fc7-4a66-bacb-a58b5f15c423
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
-      value: Player/New action
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1866705457}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnRepair
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: repairScript, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8846637346512233836, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: m_ActionEvents.Array.data[14].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8934554835922849630, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
       propertyPath: d
@@ -8915,18 +8803,8 @@ PrefabInstance:
       propertyPath: devil
       value: 
       objectReference: {fileID: 112297765}
-    - target: {fileID: 8934554835922849630, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 1289188846}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8696293623659930143, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1866705457}
-    - targetCorrespondingSourceObject: {fileID: 8696293623659930143, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1866705458}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8bf9f3a24df03b41b9a77102ff26487, type: 3}

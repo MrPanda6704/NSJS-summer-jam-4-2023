@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6201404578035736014}
   - component: {fileID: 5746394551710357058}
   - component: {fileID: 3198013007846270655}
+  - component: {fileID: 4362749245600085164}
   m_Layer: 0
   m_Name: PlayerDevil
   m_TagString: PlayerDevil
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6916180502439749743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.05, y: -5.41, z: 0}
-  m_LocalScale: {x: 0.39896, y: 0.39896, z: 0.39896}
+  m_LocalScale: {x: 5.1102786, y: 5.1102786, z: 5.1102786}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f56073bf27aeb0d4fa9c7b023018f061, type: 3}
+  m_Sprite: {fileID: 790705104, guid: 2c1c74df40893ae46be1ec61c70bd4b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -148,8 +149,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25097805, y: -0.03853087}
-  m_Size: {x: 4.2271013, y: 6.4446926}
+  m_Offset: {x: 0.020807542, y: 0.027742991}
+  m_Size: {x: 0.33225676, y: 0.6948226}
   m_Direction: 0
 --- !u!114 &6201404578035736014
 MonoBehaviour:
@@ -268,6 +269,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 483c923f-c0b7-4473-9522-7a9e501538ef
     m_ActionName: Player/Switch[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: af7d38bf-9fc7-4a66-bacb-a58b5f15c423
+    m_ActionName: Player/Repair[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -290,10 +295,15 @@ MonoBehaviour:
   flys: 0
   spriteRenderer: {fileID: 0}
   rigidBody: {fileID: 0}
-  jumpHeight: 7
+  jumpHeight: 10
   movespeed: 7
   wingStrength: 45
   isFacingRight: 0
+  other_character: {fileID: 0}
+  killbox_distance: 50
+  goal: {fileID: 0}
+  goal_range: 4
+  nextscene: Fortress
 --- !u!114 &3198013007846270655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,3 +319,24 @@ MonoBehaviour:
   bullet: {fileID: 888288805807597397, guid: ba2af63622f44534d80e6c5b3c93e410, type: 3}
   player: {fileID: 5746394551710357058}
   summonDistance: 4
+--- !u!95 &4362749245600085164
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916180502439749743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 71cc3edb3680e4e4f8f72d2dd8db3292, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

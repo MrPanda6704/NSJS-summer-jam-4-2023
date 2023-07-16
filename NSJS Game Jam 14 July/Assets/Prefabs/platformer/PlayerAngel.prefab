@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 8846637346512233836}
   - component: {fileID: 8363601594734931383}
   - component: {fileID: 8934554835922849630}
+  - component: {fileID: 7944887418834906423}
+  - component: {fileID: 2859940040578726541}
   m_Layer: 0
   m_Name: PlayerAngel
   m_TagString: Untagged
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 8696293623659930143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.15, y: 1.46, z: 0}
-  m_LocalScale: {x: 0.39896, y: 0.39896, z: 0.39896}
+  m_LocalScale: {x: 5.2938347, y: 5.2938347, z: 5.2938347}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f56073bf27aeb0d4fa9c7b023018f061, type: 3}
+  m_Sprite: {fileID: 943281015, guid: 3ac1203be2212df439e8d4b30a41417f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,8 +150,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.25097805, y: 0.3226859}
-  m_Size: {x: 4.2271013, y: 7.1671276}
+  m_Offset: {x: -0.008320298, y: -0.020800801}
+  m_Size: {x: 0.3235153, y: 0.5951948}
   m_Direction: 0
 --- !u!114 &8846637346512233836
 MonoBehaviour:
@@ -256,6 +258,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 483c923f-c0b7-4473-9522-7a9e501538ef
     m_ActionName: Player/Switch[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7944887418834906423}
+        m_TargetAssemblyTypeName: repairScript, Assembly-CSharp
+        m_MethodName: OnRepair
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: af7d38bf-9fc7-4a66-bacb-a58b5f15c423
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -277,9 +295,16 @@ MonoBehaviour:
   oreo: 1
   flys: 1
   spriteRenderer: {fileID: 0}
-  jumpHeight: 7
+  rigidBody: {fileID: 0}
+  jumpHeight: 10
   movespeed: 7
-  wingStrength: 45
+  wingStrength: 10
+  isFacingRight: 0
+  other_character: {fileID: 0}
+  killbox_distance: 50
+  goal: {fileID: 0}
+  goal_range: 4
+  nextscene: Fortress
 --- !u!114 &8934554835922849630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,4 +321,40 @@ MonoBehaviour:
   devil: {fileID: 0}
   d: {fileID: 0}
   a: {fileID: 8696293623659930143}
-  camera: {fileID: 0}
+  cam: {fileID: 0}
+--- !u!114 &7944887418834906423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696293623659930143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10dbbd1218d0f24895241da7ab4feb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angelPlayerScript: {fileID: 0}
+  range: 10
+  repairables: []
+--- !u!95 &2859940040578726541
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696293623659930143}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8494b3757da746546ad6025077a8f0cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

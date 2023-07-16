@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class movementScript : MonoBehaviour
 {
+    private Animator animator;
     private bool isGrounded = true;
     private bool isFlying = false;
     public bool on = false;
@@ -32,6 +33,7 @@ public class movementScript : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawn = transform.position;
@@ -84,7 +86,9 @@ public class movementScript : MonoBehaviour
         if (transform.position.y > killbox_distance || transform.position.y < -killbox_distance)
         {
             transform.position = spawn;
+            rigidBody.velocity = Vector2.zero;
             other_character.transform.position = other_character.GetComponent<movementScript>().spawn;
+            other_character.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
 
         if(on == false)
@@ -100,6 +104,15 @@ public class movementScript : MonoBehaviour
         {
             spriteRenderer.flipX = true;
             isFacingRight = false;
+        }
+
+        if (movement.x !=0)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
     }
 
