@@ -77,6 +77,7 @@ public class movementScript : MonoBehaviour
         float distance2 = diff2.magnitude;
         if (distance < goal_range && distance2 < goal_range)
         {
+            print("here");
             SceneManager.LoadScene(nextscene);
         }
 
